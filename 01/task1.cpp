@@ -10,8 +10,6 @@ int main() {
     int left[1000];
     int right[1000];
     string line;
-    string left_str;
-    string right_str;
     int lineNumber = 0;
     int pairDistance = 0;
     int distanceSum = 0;
@@ -34,6 +32,7 @@ int main() {
         distanceSum += pairDistance;
     }
 
+    // Display result
     cout << distanceSum << endl;
 
     inputFile.close();

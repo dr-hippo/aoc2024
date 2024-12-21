@@ -23,7 +23,7 @@ for i = 0 to 1000
             break
 
         elseif right[i] == left[i]
-            similarity_score++
+            similarity_score += left[i]
         endif          
     next j
 
