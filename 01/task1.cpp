@@ -20,12 +20,7 @@ int main() {
 
     // Read file contents; parse each line and put numbers into two arrays
     while (getline(inputFile, line)) {
-        left_str = line.substr(0, 5);
-        right_str = line.substr(8, 5);
-
-        left[lineNumber] = stoi(left_str);
-        right[lineNumber] = stoi(right_str);
-
+        sscanf(&(line[0]), "%d   %d", &(left[lineNumber]), &(right[lineNumber]));
         lineNumber++;
     }
 
@@ -39,7 +34,7 @@ int main() {
         distanceSum += pairDistance;
     }
 
-    cout << distanceSum;
+    cout << distanceSum << endl;
 
     inputFile.close();
     return 0;
