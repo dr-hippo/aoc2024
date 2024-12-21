@@ -13,11 +13,11 @@ while NOT input_file.endOfFile()
     line_number++
 endwhile
 
-// Sort lists
+// Sort arrays
 sort(left)
 sort(right)
 
-// Loop through lists; calculate distance between values in each pair and sum them
+// Loop through arrays; calculate distance between values in each pair and sum them
 for i = 0 to 1000
     distance = abs(left[i] - right[i])
     distance_sum += distance
