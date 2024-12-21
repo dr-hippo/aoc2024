@@ -1,0 +1,34 @@
+input_file = openRead("input.txt")
+array left[1000]
+array right[1000]
+line_number = 0
+similarity_score_sum = 0
+
+// Read file contents; parse each line and put numbers into two arrays
+while NOT input_file.endOfFile()
+    line = input_file.readLine()
+    left[line_number], right[line_number] = line.parseFormat("{int}   {int}")
+    line_number++
+endwhile
+
+// Sort second array
+sort(right)
+
+// Loop through first array; calculate similarity score for each value
+for i = 0 to 1000
+    similarity_score = 0
+
+    for j = 0 to 1000
+        if right[j] > left[i] then
+            break
+
+        elseif right[i] == left[i]
+            similarity_score++
+        endif          
+    next j
+
+    similarity_score_sum += similarity_score
+next i
+
+// Display result
+print(similarity_score_sum)

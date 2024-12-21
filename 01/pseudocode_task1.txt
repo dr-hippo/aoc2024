@@ -7,9 +7,7 @@ distance_sum = 0
 // Read file contents; parse each line and put numbers into two arrays
 while NOT input_file.endOfFile()
     line = input_file.readLine()
-    left_str, right_str = line.parseFormat("{int}   {int}")
-    left[line_number] = int(left_str)
-    right[line_number] = int(right_str)
+    left[line_number], right[line_number] = line.parseFormat("{int}   {int}")
     line_number++
 endwhile
 
@@ -23,5 +21,5 @@ for i = 0 to 1000
     distance_sum += distance
 next i
 
-// Show result
+// Display result
 print(distance_sum)
