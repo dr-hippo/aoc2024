@@ -4,7 +4,7 @@ array right[1000]
 line_number = 0
 distance_sum = 0
 
-// Read file contents; parse each line and put numbers into two arrays
+// Read input file; parse each line and put numbers into two arrays
 while NOT input_file.endOfFile()
     line = input_file.readLine()
     left[line_number], right[line_number] = line.parseFormat("{int}   {int}")
