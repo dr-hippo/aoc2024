@@ -16,7 +16,7 @@ int main() {
 
     inputFile.open("input.txt");
 
-    // Read file contents; parse each line and put numbers into two arrays
+    // Read input file; parse each line and put numbers into two arrays
     while (getline(inputFile, line)) {
         sscanf(&(line[0]), "%d   %d", &(left[lineNumber]), &(right[lineNumber]));
         lineNumber++;

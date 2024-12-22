@@ -1,7 +1,7 @@
 input_file = openRead("input.txt")
 safe_report_count = 0
 
-// Report checking function that takes an array/vector of integers
+// Report checking function that takes a sequence of integers
 function check_report_safe(report)
     previous_value = report[0]
     current_value = report[1]
@@ -21,7 +21,7 @@ function check_report_safe(report)
     return 1
 endfunction
 
-// Read input file; split each line into array and check if safe
+// Read input file; split each line into sequence of integers and check if safe
 while NOT input_file.endOfFile()
     line = input_file.readLine()
     report = line.split(" ")
