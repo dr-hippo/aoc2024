@@ -2,12 +2,12 @@ input_file = openRead("input.txt")
 safe_report_count = 0
 
 // Report checking function that takes a sequence of integers
-function check_report_safe(report)
+function checkReportSafe(report)
     previous_value = report[0]
     current_value = report[1]
     sign = signum(current_value - previous_value)
 
-    for i = 2 to report.length
+    for i = 1 to report.length
         previous_value = report[i - 1]
         current_value = report[i]
         difference = current_value - previous_value
@@ -16,6 +16,7 @@ function check_report_safe(report)
             OR abs(difference) > 3
             OR signum(difference) != sign then
             return 0
+        endif
     next i
 
     return 1
@@ -25,7 +26,7 @@ endfunction
 while NOT input_file.endOfFile()
     line = input_file.readLine()
     report = line.split(" ")
-    safe_report_count += check_report_safe(report);
+    safe_report_count += checkReportSafe(report);
 endwhile
 
 // Display result

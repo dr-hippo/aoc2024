@@ -1,0 +1,41 @@
+input_file = openRead("input.txt")
+safe_report_count = 0
+
+// Report checking function that takes a sequence of integers
+function checkReportSafe(report, allowSingleUnsafeLevel = true)
+    previous_value = report[0]
+    current_value = report[1]
+    sign = signum(current_value - previous_value)
+
+    for i = 1 to report.length
+        previous_value = report[i - 1]
+        current_value = report[i]
+        difference = current_value - previous_value
+
+        if abs(difference) < 1
+            OR abs(difference) > 3
+            OR signum(difference) != sign then
+            if allowSingleUnsafeLevel then
+                return checkReportOnlyOneUnsafeLevel(report)
+            else
+                return 0
+            endif
+        endif
+    next i
+
+    return 1
+endfunction
+
+// Function to check if an unsafe report can be made safe by removing any single level
+function checkReportOnlyOneUnsafeLevel(report)
+    for i = 0 to report.length
+        report_with_level_removed = report.removeAt(i)
+        if checkReportSafe(report, false) then
+            return 1
+        endif
+    next i
+
+    return 0
+endfunction
+
+// Remaining code is the same as for task 1
