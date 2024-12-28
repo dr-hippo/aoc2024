@@ -1,0 +1,16 @@
+input_file = openRead("input.txt")
+instruction_regex = "mul\((\d+),(\d+)\)"
+product_sum = 0
+
+// Read input file; search each line for multiplication instructions and add together products
+while NOT input_file.endOfFile()
+    line = input_file.readLine()
+    instructions = line.find_all_matching(instruction_regex)
+    for i = 0 to instructions.length
+        product = instructions[i].capture_groups[0] * instructions[i].capture_groups[1]
+        product_sum += product
+    next i
+endwhile
+
+// Display result
+print(product_sum)
