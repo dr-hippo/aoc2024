@@ -1,0 +1,21 @@
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main() {
+    // Initialize variables
+    ifstream inputFile;
+    string line;
+
+    inputFile.open("input.txt");
+
+    while (getline(inputFile, line)) {
+
+    }
+
+    // Display result
+    cout << "Hello World 2!" << endl;
+
+    inputFile.close();
+    return 0;
+}
