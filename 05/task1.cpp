@@ -1,23 +1,8 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
+#include <aoccom.h>
 using namespace std;
-
-// TODO: Refactor this function into source file containing common functions, per DRY
-vector<int> splitToInts(string s, string delimiter) {
-    size_t pos_start = 0, pos_end, delim_len = delimiter.length();
-    string token;
-    vector<int> res;
-
-    while ((pos_end = s.find(delimiter, pos_start)) != string::npos) {
-        token = s.substr(pos_start, pos_end - pos_start);
-        pos_start = pos_end + delim_len;
-        res.push_back(stoi(token));
-    }
-
-    res.push_back(stoi(s.substr(pos_start)));
-    return res;
-}
 
 // Returns whether the numbers in the rule appear in the sequence in the same order, if both numbers appear; otherwise returns true.
 bool sequenceObeysRule(vector<int> sequence, pair<int, int> rule) {
@@ -65,7 +50,7 @@ int main() {
 
         // Lists of pages needing update comes after blank line
         else {
-            vector<int> pageUpdates = splitToInts(line, ",");
+            vector<int> pageUpdates = aocc::splitToInts(line, ",");
             bool updateObeysAllRules = true;
             for (size_t j = 0; j < rules.size(); j++) {
                 if (!sequenceObeysRule(pageUpdates, rules[j])) {
