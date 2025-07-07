@@ -54,7 +54,6 @@ int main() {
             bool updateObeysAllRules = true;
             for (size_t j = 0; j < rules.size(); j++) {
                 if (!sequenceObeysRule(pageUpdates, rules[j])) {
-                    cout << line << " " << rules[j].first << "|" << rules[j].second << endl;
                     updateObeysAllRules = false;
                     break;
                 }

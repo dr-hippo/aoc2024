@@ -1,1 +1,0 @@
-g++ -Wall %1\task%2.cpp -o %1\task%2.exe
