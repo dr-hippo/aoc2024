@@ -1,7 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
-#include <aoccom.h>
+#include "aoccom.h"
 using namespace std;
 
 // Returns whether the numbers in the rule appear in the sequence in the same order, if both numbers appear; otherwise returns true.

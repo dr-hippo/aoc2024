@@ -1,11 +1,8 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
+#include "aoccom.h"
 using namespace std; 
-
-bool isInBounds(vector<string> grid, int x, int y) {
-    return x >= 0 && y >= 0 && x < (int)grid[0].size() && y < (int)grid.size();
-}
 
 // Checks if a sequence of characters on grid, starting from (posX, posY) and spaced by (deltaX, deltaY), matches query
 int searchInGrid(string query, vector<string> grid, int posX, int posY, int deltaX, int deltaY) {
@@ -13,7 +10,7 @@ int searchInGrid(string query, vector<string> grid, int posX, int posY, int delt
         int currentX = posX + i * deltaX;
         int currentY = posY + i * deltaY;
 
-        if (!isInBounds(grid, currentX, currentY)) {
+        if (!aocc::isInBounds(grid, currentX, currentY)) {
             return 0;
         }
 

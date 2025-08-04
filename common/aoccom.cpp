@@ -22,4 +22,8 @@ namespace aocc {
         res.push_back(stoi(s.substr(pos_start)));
         return res;
     }
+
+    bool isInBounds(std::vector<std::string> grid, int x, int y) {
+        return x >= 0 && y >= 0 && x < (int)grid[0].size() && y < (int)grid.size();
+    }
 }

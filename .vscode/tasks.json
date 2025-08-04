@@ -10,6 +10,7 @@
 				"-Wall",
 				"-g",
 				"${file}",
+				"${fileDirname}\\shared.cpp",
 				"${workspaceFolder}\\common\\aoccom.cpp",
 				"-o",
 				"${fileDirname}\\${fileBasenameNoExtension}.exe",
@@ -37,8 +38,35 @@
 				"-Wall",
 				"-g",
 				"${file}",
+				"${fileDirname}\\shared.cpp",
 				"-o",
 				"${fileDirname}\\${fileBasenameNoExtension}.exe"
+			],
+			"options": {
+				"cwd": "${fileDirname}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": {
+				"kind": "build"
+			},
+			"detail": "compiler: C:\\MinGW\\bin\\g++.exe"
+		},
+		{
+			"type": "cppbuild",
+			"label": "Build this C++ source file (no shared code)",
+			"command": "C:\\MinGW\\bin\\g++.exe",
+			"args": [
+				"-fdiagnostics-color=always",
+				"-Wall",
+				"-g",
+				"${file}",
+				"${workspaceFolder}\\common\\aoccom.cpp",
+				"-o",
+				"${fileDirname}\\${fileBasenameNoExtension}.exe",
+			    "-I",
+				"${workspaceFolder}\\common"
 			],
 			"options": {
 				"cwd": "${fileDirname}"
