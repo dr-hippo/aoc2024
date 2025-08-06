@@ -26,4 +26,8 @@ namespace aocc {
     bool isInBounds(std::vector<std::string> grid, int x, int y) {
         return x >= 0 && y >= 0 && x < (int)grid[0].size() && y < (int)grid.size();
     }
+
+    bool isInBounds(std::vector<std::string> grid, std::pair<int, int> coord) {
+        return coord.first >= 0 && coord.second >= 0 && coord.first < (int)grid[0].size() && coord.second < (int)grid.size();
+    }
 }

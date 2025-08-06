@@ -11,6 +11,7 @@ namespace aocc {
     std::vector<int> splitToInts(std::string s, std::string delimiter);
 
     bool isInBounds(std::vector<std::string> grid, int x, int y);
+    bool isInBounds(std::vector<std::string> grid, std::pair<int, int> coord);
 }
 
 #endif
